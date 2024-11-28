@@ -242,3 +242,43 @@ class Heroe(Categoria):
     
 heroe = Heroe("Spiderman", 9)
 print(heroe)
+
+# ------------------ TRY - EXCEPT - FINALLY
+
+# try: Nos permite probar un bloque de codigo en busca de errores.
+# except: Nos permite especificar el tipo de erroe que queremos capturar.
+# finally: Nos permite ejecutar un bloque de codigo una vez terminado el try o except.
+try:
+    print(z)
+except:
+    print("Algo ocurrio")
+
+print("Continuamos con el codigo")
+
+try:
+    print(x)
+except NameError:
+    print("La variable no esta definida")
+except:
+    print("Ocurrio un error fatal...")
+    
+# El bloque finally se ejecuta siempre
+
+try:
+    print("Hola mundo")
+except:
+    print("Algo ocurrio")
+finally:
+    print("Fin de la ejecucion")
+
+# Nosotros como desarrolladores podemos generar una excepcion personalizada si se produce.
+
+def dividir(a,b):
+    if b == 0:
+        raise ZeroDivisionError("No puedes dividir entre 0")
+    return a / b
+
+try:
+    print(dividir(5,2))
+except ZeroDivisionError as error:
+    print(f"Error: {error}")
